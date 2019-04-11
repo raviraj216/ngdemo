@@ -1,0 +1,15 @@
+<div class="container">
+     <h2 class="my-5 ">Global Feeds  </h2>
+    <div class="list-group">
+      <a *ngFor="let feed of feeds"  routerLink="/feed/{{feed.slug.toLowerCase()}}" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+           <img src="{{feed.image}}" width="80px" height="80px"/>
+          <small class="text-muted">{{ feed?(feed.created_datetime | date :'mediumDate'):'' }}</small>
+        </div>
+        <h5 class="mb-1">{{feed.title}}</h5>
+        <p class="mb-1">
+              {{ (feed.description.length>200)? (feed.description | slice:0:200)+' ....':(feed.description) }}
+        </p>
+      </a>
+    </div>
+</div>

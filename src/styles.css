@@ -1,0 +1,31 @@
+/* Add application styles & imports to this file! */
+
+ul.menu{
+    float: left;
+    width: 100%;
+     margin-top: 20px 
+}
+ul.menu li{
+    float: left;
+    padding: 10px;
+    list-style-type: none;
+}
+
+ul.menu li a.active {
+    color: #fff;
+    background-color: pink;
+    padding: 10px
+}
+
+.header-menu {
+    background-color: #bdbdbd;
+        margin-bottom: 38px;
+}
+
+.page-footer{
+    background-color: #bdbdbd;
+        margin-top: 100px;
+}
+.invalid-feedback {
+    color: #ff0000;
+}

@@ -1,0 +1,16 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+<div class="header-menu">
+ <div class="container">
+    <div class="row">
+<ul class="menu">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li *ngIf="!authenticationService.isLoggedIn()"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+      <li *ngIf="!authenticationService.isLoggedIn()"><a routerLink="/registration" routerLinkActive="active">Registration</a></li>
+      <li *ngIf="authenticationService.isLoggedIn()"><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+       <li *ngIf="authenticationService.isLoggedIn()"><a routerLink="/feeds" routerLinkActive="active">Feeds</a></li>
+       <li *ngIf="authenticationService.isLoggedIn()">
+        <a href="javascript:void(0);" (click)="authenticationService.logout()">Logout</a></li>
+</ul>
+ </div>
+  </div>
+</div>
