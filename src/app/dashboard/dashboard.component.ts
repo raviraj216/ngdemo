@@ -16,8 +16,6 @@ export class DashboardComponent implements OnInit {
     this.username=localStorage.getItem('username');
     if( localStorage.getItem('is_login')=='true'){
         this.isLogin = true;
-        console.log('inlogin');
-
     }
   }
   

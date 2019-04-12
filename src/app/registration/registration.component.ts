@@ -39,14 +39,12 @@ export class RegistrationComponent implements OnInit {
             return;
         }else{
           var registerData=this.registerForm.value;
-          
           this.authenticationService.registration(registerData).subscribe( responsedatas =>
           {
-            
               if (responsedatas && responsedatas.status==true) {
-                localStorage.setItem('message', JSON.stringify(responsedatas.message));
+                 localStorage.setItem('message', JSON.stringify(responsedatas.message));
                   this.is_error=false;
-                  this.message='Registration has been done successfully.';
+                  this.message=responsedatas.message;
               }else{
                  this.is_error=true;
                   this.message=responsedatas.message;

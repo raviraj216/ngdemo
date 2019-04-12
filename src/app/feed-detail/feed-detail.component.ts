@@ -10,8 +10,6 @@ import { FeedService } from '../services/feed.service';
 })
 export class FeedDetailComponent implements OnInit {
   feed :any;
-    strDate = 'Mon Nov 07 2016 09:44:12 GMT+0530';
-
   constructor(private router: Router,private activatedRoute: ActivatedRoute,private feedService: FeedService) { }
 
   ngOnInit() {
@@ -19,7 +17,6 @@ export class FeedDetailComponent implements OnInit {
      this.feedService.getFeedBySlug(slug).subscribe( responsedatas =>
           {
                    this.feed=responsedatas.data;  
-                   console.log(responsedatas)   ;         
              }
       );
 

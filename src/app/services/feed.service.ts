@@ -16,9 +16,7 @@ export class FeedService {
       return this.http.post<any>(this.url,params);
   }
 
-  getFeedBySlug(slug:string): Observable<any> {
-    console.log(slug);
-      
+  getFeedBySlug(slug:string): Observable<any> {      
       const  params = new  HttpParams().set('method', "getFeedBySlug").set('data',JSON.stringify([{"slug":slug}]));
       return this.http.post<any>(this.url,params);
   }
