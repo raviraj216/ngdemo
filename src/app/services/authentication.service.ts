@@ -18,14 +18,11 @@ export class AuthenticationService {
     }
 
     doLogin(postdata: any): Observable<any> {
-      console.log(postdata);
       const  params = new  HttpParams().set('method', "login").set('data', JSON.stringify([{"email":postdata.email,"password":postdata.password}]));
 
       return this.http.post<any>(this.url,params).pipe(
             map(responseData => {
-            console.log(responseData);
               if (responseData && responseData.status==true) {
-              console.log(responseData.data.username);
                 localStorage.setItem('is_login', "true");
                 localStorage.setItem('username', responseData.data.username);
                 localStorage.setItem('username', responseData.data.email);
@@ -39,7 +36,6 @@ export class AuthenticationService {
   }
 
   registration(postdata: any): Observable<any> {
-      console.log(postdata);
       const  params = new  HttpParams().set('method', "registration").set('data', JSON.stringify([{"email":postdata.email,"username":postdata.name,"password":postdata.password}]));
 
       return this.http.post<any>(this.url,params);
@@ -50,7 +46,6 @@ export class AuthenticationService {
   //}
 
   logout(): void {
-     console.log("Logout");
      localStorage.setItem('is_login', "");
      localStorage.setItem('username', "");
      this.router.navigate(['/login']);
