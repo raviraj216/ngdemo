@@ -25,8 +25,7 @@ export class AuthenticationService {
               if (responseData && responseData.status==true) {
                 localStorage.setItem('is_login', "true");
                 localStorage.setItem('username', responseData.data.username);
-                localStorage.setItem('username', responseData.data.email);
-                    
+                localStorage.setItem('email', responseData.data.email);
                 localStorage.setItem('login_user', JSON.stringify(responseData.data));
                 return true;
               }
