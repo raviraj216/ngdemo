@@ -45,6 +45,7 @@ export class RegistrationComponent implements OnInit {
                  localStorage.setItem('message', JSON.stringify(responsedatas.message));
                   this.is_error=false;
                   this.message=responsedatas.message;
+                  this.registerForm.reset();
               }else{
                  this.is_error=true;
                   this.message=responsedatas.message;
